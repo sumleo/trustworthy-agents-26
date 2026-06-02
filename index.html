@@ -5,50 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Trustworthy Tool-Using &amp; Skill-Based AI Agents — NeurIPS 2026 Workshop</title>
 <meta name="description" content="A proposed NeurIPS 2026 workshop on the security, privacy, evaluation, and deployment of tool-using and skill-based AI agents." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0e14'/%3E%3Cpath d='M16 5l9 4v6c0 5.5-3.8 9.7-9 11-5.2-1.3-9-5.5-9-11V9z' fill='none' stroke='%23c6f24e' stroke-width='2'/%3E%3Cpath d='M11.5 16l3 3 6-6.5' fill='none' stroke='%23c6f24e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff' stroke='%23e4e4dc'/%3E%3Cpath d='M16 5l9 4v6c0 5.5-3.8 9.7-9 11-5.2-1.3-9-5.5-9-11V9z' fill='none' stroke='%234d7c1a' stroke-width='2'/%3E%3Cpath d='M11.5 16l3 3 6-6.5' fill='none' stroke='%234d7c1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --ink:#0b0e14;
-    --ink-2:#11151f;
-    --panel:#141a26;
-    --line:#222b3b;
-    --txt:#e7ecf2;
-    --muted:#93a0b4;
-    --dim:#5e6b80;
+    --ink:#14171c;
+    --paper:#f5f5f0;
+    --paper2:#ecece4;
+    --panel:#ffffff;
+    --line:#e4e4dc;
+    --txt:#14171c;
+    --muted:#5b636f;
+    --dim:#9aa1ab;
+    --accent:#4d7c1a;
+    --accent-deep:#3a5f12;
     --lime:#c6f24e;
-    --lime-dim:#8fae35;
-    --cyan:#6fe3d2;
-    --amber:#f2b84e;
+    --amber:#9a6512;
     --maxw:1140px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;scroll-padding-top:78px;}
   body{
-    margin:0;background:var(--ink);color:var(--txt);
+    margin:0;background:var(--paper);color:var(--txt);
     font-family:"IBM Plex Sans",system-ui,sans-serif;
     font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
     background-image:
-      linear-gradient(transparent 0 31px, rgba(255,255,255,.012) 31px 32px),
-      linear-gradient(90deg, transparent 0 31px, rgba(255,255,255,.012) 31px 32px);
+      linear-gradient(transparent 0 31px, rgba(20,23,28,.022) 31px 32px),
+      linear-gradient(90deg, transparent 0 31px, rgba(20,23,28,.022) 31px 32px);
     background-size:32px 32px;
   }
   a{color:inherit;text-decoration:none;}
   ::selection{background:var(--lime);color:var(--ink);}
 
-  /* mono labels */
   .mono{font-family:"IBM Plex Mono",monospace;}
   .kicker{
     font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;
-    text-transform:uppercase;color:var(--lime-dim);
+    text-transform:uppercase;color:var(--accent);
   }
 
   /* nav */
   header.nav{
     position:fixed;top:0;left:0;right:0;z-index:50;
-    backdrop-filter:blur(10px);background:rgba(11,14,20,.78);
+    backdrop-filter:blur(10px);background:rgba(245,245,240,.82);
     border-bottom:1px solid var(--line);
   }
   .nav-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
@@ -56,10 +56,10 @@
   .brand{display:flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace;
     font-weight:600;font-size:14px;letter-spacing:.02em;}
   .brand svg{width:22px;height:22px;flex:none;}
-  .brand b{color:var(--lime);}
+  .brand b{color:var(--accent);}
   nav.links{display:flex;gap:26px;}
   nav.links a{font-size:13.5px;color:var(--muted);transition:color .2s;letter-spacing:.01em;}
-  nav.links a:hover{color:var(--lime);}
+  nav.links a:hover{color:var(--accent);}
   .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--txt);
     border-radius:6px;padding:6px 10px;font-family:"IBM Plex Mono",monospace;cursor:pointer;}
 
@@ -71,32 +71,32 @@
     line-height:1.08;margin:0;letter-spacing:-.01em;}
   h3{font-family:"Familjen Grotesk",sans-serif;font-weight:600;margin:0 0 6px;font-size:20px;}
   p{margin:0 0 18px;}
-  .lead{font-size:19px;color:#cdd6e2;max-width:74ch;}
+  .lead{font-size:19px;color:#3a414c;max-width:74ch;}
 
   /* hero */
   .hero{padding:150px 24px 104px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
   .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(60% 70% at 78% 6%, rgba(198,242,78,.10), transparent 60%),
-               radial-gradient(50% 60% at 6% 96%, rgba(111,227,210,.08), transparent 62%);}
+    background:radial-gradient(60% 70% at 80% 4%, rgba(198,242,78,.32), transparent 58%),
+               radial-gradient(46% 58% at 4% 98%, rgba(77,124,26,.10), transparent 62%);}
   .hero .wrap{position:relative;}
   .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;}
   .badge{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;
     border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--muted);
-    background:rgba(255,255,255,.015);}
-  .badge.live{color:var(--lime);border-color:rgba(198,242,78,.4);}
+    background:var(--panel);}
+  .badge.live{color:var(--accent-deep);border-color:rgba(77,124,26,.4);background:rgba(198,242,78,.18);}
   h1{font-family:"Familjen Grotesk",sans-serif;font-weight:700;
     font-size:clamp(36px,6.4vw,72px);line-height:1.02;letter-spacing:-.02em;margin:0 0 24px;max-width:18ch;}
-  h1 .hl{color:var(--lime);}
-  .tagline{font-size:clamp(17px,2.2vw,21px);color:#cdd6e2;max-width:62ch;margin:0 0 36px;}
+  h1 .hl{background:linear-gradient(transparent 60%, rgba(198,242,78,.9) 60%);padding:0 .08em;}
+  .tagline{font-size:clamp(17px,2.2vw,21px);color:#3a414c;max-width:62ch;margin:0 0 36px;}
   .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:46px;}
   .btn{font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.02em;
-    padding:13px 22px;border-radius:8px;border:1px solid var(--line);transition:.2s;cursor:pointer;display:inline-flex;align-items:center;gap:9px;}
-  .btn.primary{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600;}
-  .btn.primary:hover{background:#d6ff66;transform:translateY(-2px);}
+    padding:13px 22px;border-radius:8px;border:1px solid var(--line);transition:.2s;cursor:pointer;display:inline-flex;align-items:center;gap:9px;background:var(--panel);}
+  .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+  .btn.primary:hover{background:var(--accent-deep);transform:translateY(-2px);}
   .btn.ghost{color:var(--txt);}
-  .btn.ghost:hover{border-color:var(--lime);color:var(--lime);}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
   .factline{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;overflow:hidden;
-    font-family:"IBM Plex Mono",monospace;background:rgba(255,255,255,.012);}
+    font-family:"IBM Plex Mono",monospace;background:var(--panel);box-shadow:0 6px 22px rgba(20,30,10,.05);}
   .factline div{padding:16px 22px;border-right:1px solid var(--line);flex:1 1 200px;}
   .factline div:last-child{border-right:none;}
   .factline .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:5px;}
@@ -105,19 +105,19 @@
 
   /* topics chips */
   .chips{display:flex;flex-wrap:wrap;gap:10px;}
-  .chip{border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:14.5px;color:#d4dce8;
-    background:rgba(255,255,255,.015);transition:.18s;}
-  .chip:hover{border-color:var(--lime-dim);color:#fff;background:rgba(198,242,78,.05);}
-  .chip span{color:var(--lime-dim);font-family:"IBM Plex Mono",monospace;font-size:12px;margin-right:8px;}
+  .chip{border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:14.5px;color:#2f3640;
+    background:var(--panel);transition:.18s;}
+  .chip:hover{border-color:var(--accent);color:var(--ink);background:rgba(198,242,78,.14);}
+  .chip span{color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:12px;margin-right:8px;}
 
   /* dates */
   .timeline{border-left:2px solid var(--line);margin-left:6px;}
   .ev{position:relative;padding:0 0 30px 30px;}
   .ev:last-child{padding-bottom:0;}
   .ev::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;
-    background:var(--ink);border:2px solid var(--lime-dim);}
-  .ev.key::before{background:var(--lime);border-color:var(--lime);box-shadow:0 0 0 4px rgba(198,242,78,.15);}
-  .ev .date{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--lime);letter-spacing:.02em;}
+    background:var(--paper);border:2px solid var(--accent);}
+  .ev.key::before{background:var(--lime);border-color:var(--accent);box-shadow:0 0 0 4px rgba(198,242,78,.3);}
+  .ev .date{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--accent-deep);letter-spacing:.02em;}
   .ev .what{font-size:17px;color:var(--txt);margin-top:2px;}
   .ev .what small{color:var(--muted);}
 
@@ -125,29 +125,49 @@
   .grid{display:grid;gap:18px;}
   .grid.s4{grid-template-columns:repeat(4,1fr);}
   .grid.s2{grid-template-columns:repeat(2,1fr);}
-  .card{border:1px solid var(--line);border-radius:12px;padding:22px;background:linear-gradient(180deg,var(--panel),var(--ink-2));
-    transition:.2s;}
-  .card:hover{border-color:var(--lime-dim);transform:translateY(-3px);}
+  .card{border:1px solid var(--line);border-radius:12px;padding:24px 20px;background:var(--panel);
+    transition:.2s;text-align:center;}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 26px rgba(20,30,10,.08);}
+
+  /* avatars */
+  .avatar{width:84px;height:84px;border-radius:50%;margin:0 auto 16px;position:relative;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    background:linear-gradient(160deg,#eef5dd,#e2eccc);
+    border:2px solid var(--accent);box-shadow:0 4px 14px rgba(77,124,26,.14);}
+  .avatar .ini{font-family:"Familjen Grotesk",sans-serif;font-weight:700;font-size:28px;color:var(--accent-deep);letter-spacing:.01em;}
+  .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .card.org .avatar{width:60px;height:60px;margin-bottom:12px;}
+  .card.org .avatar .ini{font-size:20px;}
+
   .card .status{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-    display:inline-block;padding:3px 9px;border-radius:999px;margin-bottom:14px;}
-  .status.conf{color:var(--lime);border:1px solid rgba(198,242,78,.4);}
-  .status.tent{color:var(--amber);border:1px solid rgba(242,184,78,.35);}
+    display:inline-block;padding:3px 9px;border-radius:999px;margin-top:12px;}
+  .status.conf{color:var(--accent-deep);border:1px solid rgba(77,124,26,.4);background:rgba(198,242,78,.16);}
+  .status.tent{color:var(--amber);border:1px solid rgba(154,101,18,.32);background:rgba(242,184,78,.12);}
   .card .aff{color:var(--muted);font-size:14px;margin:2px 0 12px;}
-  .card .topic{font-size:14.5px;color:#cbd4e0;}
-  .org-aff{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--lime-dim);margin-top:2px;}
+  .card .topic{font-size:14.5px;color:#3a414c;}
+  .org-aff{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--accent);margin-top:2px;}
+
+  /* agenda */
+  .agenda{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);box-shadow:0 6px 22px rgba(20,30,10,.04);}
+  .agenda .row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 22px;border-bottom:1px solid var(--line);align-items:baseline;}
+  .agenda .row:last-child{border-bottom:none;}
+  .agenda .dur{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--accent-deep);letter-spacing:.02em;}
+  .agenda .act{font-size:16px;color:var(--txt);}
+  .agenda .act small{color:var(--muted);display:block;font-size:13.5px;margin-top:2px;}
+  @media(max-width:560px){.agenda .row{grid-template-columns:1fr;gap:4px;}}
 
   /* cfp */
   .cfp-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start;}
-  .panel{border:1px solid var(--line);border-radius:12px;padding:26px;background:rgba(255,255,255,.012);}
+  .panel{border:1px solid var(--line);border-radius:12px;padding:26px;background:var(--panel);box-shadow:0 6px 22px rgba(20,30,10,.04);}
   .panel ul{margin:0;padding-left:18px;}
-  .panel li{margin-bottom:10px;color:#cdd6e2;}
-  .note{font-size:14px;color:var(--muted);border-left:2px solid var(--lime-dim);padding-left:14px;margin-top:18px;}
+  .panel li{margin-bottom:10px;color:#3a414c;}
+  .note{font-size:14px;color:var(--muted);border-left:2px solid var(--accent);padding-left:14px;margin-top:18px;}
 
   /* footer */
-  footer{padding:60px 24px;color:var(--muted);font-size:14px;}
+  footer{padding:60px 24px;color:var(--muted);font-size:14px;background:var(--paper2);}
   footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;}
-  footer a{color:var(--lime-dim);}
-  footer a:hover{color:var(--lime);}
+  footer a{color:var(--accent);}
+  footer a:hover{color:var(--accent-deep);}
 
   /* reveal */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
@@ -158,7 +178,7 @@
     .cfp-grid{grid-template-columns:1fr;}
     nav.links{display:none;}
     nav.links.open{display:flex;position:absolute;top:58px;right:16px;flex-direction:column;
-      background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;gap:14px;}
+      background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 20px;gap:14px;box-shadow:0 10px 26px rgba(20,30,10,.1);}
     .nav-toggle{display:inline-block;}
   }
   @media(max-width:560px){
@@ -176,7 +196,7 @@
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="#top">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5l9 4v6c0 5.5-3.8 9.7-9 11-5.2-1.3-9-5.5-9-11V9z" fill="none" stroke="#c6f24e" stroke-width="2"/><path d="M11.5 16l3 3 6-6.5" fill="none" stroke="#c6f24e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5l9 4v6c0 5.5-3.8 9.7-9 11-5.2-1.3-9-5.5-9-11V9z" fill="none" stroke="#4d7c1a" stroke-width="2"/><path d="M11.5 16l3 3 6-6.5" fill="none" stroke="#4d7c1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>Trustworthy<b>Agents</b>’26</span>
     </a>
     <button class="nav-toggle mono" aria-label="Toggle menu">menu</button>
@@ -185,6 +205,7 @@
       <a href="#topics">Topics</a>
       <a href="#dates">Dates</a>
       <a href="#speakers">Speakers</a>
+      <a href="#program">Program</a>
       <a href="#organizers">Organizers</a>
       <a href="#cfp">Call for Papers</a>
     </nav>
@@ -257,55 +278,75 @@
 
 <section id="speakers">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="kicker">04 / Program</span><h2>Invited speakers</h2></div>
+    <div class="sec-head reveal"><span class="kicker">04 / Speakers</span><h2>Invited speakers</h2></div>
     <div class="grid s4">
       <div class="card reveal">
-        <span class="status conf">Confirmed</span>
+        <div class="avatar"><span class="ini">YX</span><img src="assets/yang-xiang.jpg" alt="Yang Xiang" onerror="this.remove()"></div>
         <h3>Yang Xiang</h3>
         <div class="aff">Swinburne University of Technology · IEEE Fellow</div>
         <div class="topic">Cyber and AI security.</div>
+        <span class="status conf">Confirmed</span>
       </div>
       <div class="card reveal">
-        <span class="status conf">Confirmed</span>
+        <div class="avatar"><span class="ini">MD</span><img src="assets/ming-ding.jpg" alt="Ming Ding" onerror="this.remove()"></div>
         <h3>Ming Ding</h3>
         <div class="aff">CSIRO Privacy Technology Group · Australia’s GovAI</div>
         <div class="topic">Privacy technology and AI governance.</div>
+        <span class="status conf">Confirmed</span>
       </div>
       <div class="card reveal">
-        <span class="status tent">Invited</span>
+        <div class="avatar"><span class="ini">DL</span><img src="assets/david-lo.jpg" alt="David Lo" onerror="this.remove()"></div>
         <h3>David Lo</h3>
         <div class="aff">Singapore Management University · ACM/IEEE Fellow</div>
         <div class="topic">AI for software engineering &amp; trustworthy code agents.</div>
+        <span class="status tent">Invited</span>
       </div>
       <div class="card reveal">
-        <span class="status tent">Invited</span>
+        <div class="avatar"><span class="ini">SW</span><img src="assets/shuai-wang.jpg" alt="Shuai Wang" onerror="this.remove()"></div>
         <h3>Shuai Wang</h3>
         <div class="aff">HKUST</div>
         <div class="topic">Software security &amp; LLM/agent security.</div>
+        <span class="status tent">Invited</span>
       </div>
     </div>
     <p class="note reveal">Additional speakers to be announced. “Invited” indicates speakers approached pending confirmation.</p>
   </div>
 </section>
 
+<section id="program">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">05 / Program</span><h2>Tentative schedule</h2></div>
+    <p class="lead reveal" style="margin-bottom:30px;">A single-track, full-day program (≈7–9 hours). Roughly half the day is reserved for contributed spotlights, posters, demos, and discussion rather than talks alone.</p>
+    <div class="agenda reveal">
+      <div class="row"><div class="dur">10 min</div><div class="act">Opening &amp; problem framing</div></div>
+      <div class="row"><div class="dur">6 × 35 min</div><div class="act">Invited talks <small>30 min talk + 5 min Q&amp;A each</small></div></div>
+      <div class="row"><div class="dur">8–10 × 6 min</div><div class="act">Contributed spotlights <small>Q&amp;A continuing at the posters</small></div></div>
+      <div class="row"><div class="dur">80–100 min</div><div class="act">Poster &amp; demo session <small>all accepted papers</small></div></div>
+      <div class="row"><div class="dur">60 min</div><div class="act">Panel: responsible deployment, dual-use risk, and the role of benchmarks &amp; standards</div></div>
+      <div class="row"><div class="dur">20 min</div><div class="act">Closing synthesis <small>open problems &amp; community next steps</small></div></div>
+    </div>
+    <p class="note reveal">Final schedule with talk titles will be posted before the workshop.</p>
+  </div>
+</section>
+
 <section id="organizers">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="kicker">05 / Team</span><h2>Organizers</h2></div>
+    <div class="sec-head reveal"><span class="kicker">06 / Team</span><h2>Organizers</h2></div>
     <div class="grid s4">
-      <div class="card reveal"><h3>Neil Gong</h3><div class="org-aff">Duke University</div></div>
-      <div class="card reveal"><h3>Bo Li</h3><div class="org-aff">UIUC</div></div>
-      <div class="card reveal"><h3>Yi Liu</h3><div class="org-aff">Quantstamp</div></div>
-      <div class="card reveal"><h3>Lei Ma</h3><div class="org-aff">U. Tokyo &amp; U. Alberta</div></div>
-      <div class="card reveal"><h3>Cong Wang</h3><div class="org-aff">City U. of Hong Kong</div></div>
-      <div class="card reveal"><h3>Leo Zhang</h3><div class="org-aff">Griffith University</div></div>
-      <div class="card reveal"><h3>Tianwei Zhang</h3><div class="org-aff">Nanyang Tech. University</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">NG</span><img src="assets/neil-gong.jpg" alt="Neil Gong" onerror="this.remove()"></div><h3>Neil Gong</h3><div class="org-aff">Duke University</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">BL</span><img src="assets/bo-li.jpg" alt="Bo Li" onerror="this.remove()"></div><h3>Bo Li</h3><div class="org-aff">UIUC</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">YL</span><img src="assets/yi-liu.jpg" alt="Yi Liu" onerror="this.remove()"></div><h3>Yi Liu</h3><div class="org-aff">Quantstamp</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">LM</span><img src="assets/lei-ma.jpg" alt="Lei Ma" onerror="this.remove()"></div><h3>Lei Ma</h3><div class="org-aff">U. Tokyo &amp; U. Alberta</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">CW</span><img src="assets/cong-wang.jpg" alt="Cong Wang" onerror="this.remove()"></div><h3>Cong Wang</h3><div class="org-aff">City U. of Hong Kong</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">LZ</span><img src="assets/leo-zhang.jpg" alt="Leo Zhang" onerror="this.remove()"></div><h3>Leo Zhang</h3><div class="org-aff">Griffith University</div></div>
+      <div class="card org reveal"><div class="avatar"><span class="ini">TZ</span><img src="assets/tianwei-zhang.jpg" alt="Tianwei Zhang" onerror="this.remove()"></div><h3>Tianwei Zhang</h3><div class="org-aff">Nanyang Tech. University</div></div>
     </div>
   </div>
 </section>
 
 <section id="cfp">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="kicker">06 / Submit</span><h2>Call for papers</h2></div>
+    <div class="sec-head reveal"><span class="kicker">07 / Submit</span><h2>Call for papers</h2></div>
     <div class="cfp-grid">
       <div class="panel reveal">
         <h3 style="margin-bottom:14px;">What we’re looking for</h3>
@@ -346,12 +387,10 @@
 </footer>
 
 <script>
-  // mobile nav
   var toggle=document.querySelector('.nav-toggle'),links=document.querySelector('nav.links');
   toggle&&toggle.addEventListener('click',function(){links.classList.toggle('open');});
   links&&links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open');});
 
-  // scroll reveal
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:.12});
